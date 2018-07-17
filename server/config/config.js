@@ -16,7 +16,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev'
 
 const urlDB = process.env.NODE_ENV === 'dev' ? 
     'mongodb://localhost:27017/cafedb' :
-    'mongodb://cafe-user:cafeuser1495@ds045011.mlab.com:45011/cafedatabase'
+    process.env.MONGO_MLAB_URL
 
 
 process.env.URLDB = urlDB
