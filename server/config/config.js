@@ -21,3 +21,21 @@ const urlDB = process.env.NODE_ENV === 'dev' ?
 
 process.env.URLDB = urlDB
 
+// =====================
+// Fecha de expiracion del token
+// =====================
+// 60 segundos
+// 60 minutos
+// 24 horas 
+// 30 dias
+
+process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30
+
+
+
+// =====================
+// Seed, semilla de autenticacion, o clave secreta
+// =====================
+
+process.env.SEED_TOKEN = process.env.SEED_TOKEN || 'codigo-secreto'
+
