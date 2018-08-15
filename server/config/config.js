@@ -29,7 +29,7 @@ process.env.URLDB = urlDB
 // 24 horas 
 // 30 dias
 
-process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30
+process.env.CADUCIDAD_TOKEN = '48h'
 
 
 
@@ -39,3 +39,9 @@ process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30
 
 process.env.SEED_TOKEN = process.env.SEED_TOKEN || 'codigo-secreto'
 
+
+// =====================
+// Google client
+// =====================
+
+process.env.CLIENT_ID = process.env.CLIENT_ID || '562999825128-ffc0tqq48gv6q7n1o3efo8iv9lnm08ju.apps.googleusercontent.com'

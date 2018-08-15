@@ -25,6 +25,27 @@ const verificaToken = (req, res, next) => {
 }
 
 // ======================
+// Verificar token img
+// ======================
+const verificaTokenImg = (req, res, next) => {
+    //Obtinen los valores del header
+    let token = req.query.token
+
+     jwt.verify(token, process.env.SEED_TOKEN, (err, decoded) => {
+       if(err){
+           return res.status(401).json({
+               ok:false,
+               err: {
+                   message: 'Token no valido'
+               }
+           })
+       }
+       req.usuario = decoded.Usuario
+        next()
+     })
+}
+
+// ======================
 // Verificar admin role
 // ======================
   
@@ -47,5 +68,6 @@ const verificaRole = (req, res, next) => {
 
 module.exports = {
     verificaToken,
-    verificaRole
+    verificaRole,
+    verificaTokenImg
 }
